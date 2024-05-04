@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feminine era | welcome.</title>
+    <link rel="icon" href="swan.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #F8F7F2;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: "Playfair Display", serif;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 80px;
+            text-transform: none;
+            letter-spacing: -8px;
+            transition: 700ms ease;
+            font-weight: 300;
+            font-style: normal;
+            margin-bottom: 0.8rem;
+            outline: none;
+            text-align: center;
+            margin-top: -30px;
+            cursor: default;
+        }
+
+        h2 {
+            font-size: 60px;
+            text-transform: none;
+            letter-spacing: -6px;
+            transition: 700ms ease;
+            font-weight: 300;
+            font-style: normal;
+            margin-bottom: 0.8rem;
+            outline: none;
+            text-align: center;
+            margin-top: -30px;
+            cursor: default;
+        }
+
+        h3 {
+            font-size: 46px;
+            text-transform: none;
+            letter-spacing: -5px;
+            transition: 700ms ease;
+            font-weight: 300;
+            font-style: normal;
+            margin-bottom: 0.8rem;
+            outline: none;
+            text-align: center;
+            margin-top: -30px;
+            cursor: default;
+        }
+
+        /* femEra */
+
+        .feminineEra:hover {
+            font-variation-settings: "wght" 582;
+            letter-spacing: -2px;
+        }
+
+        /* MODE-BTN */
+
+        .light-mode {
+            background-color: #F8F7F2;
+            color: #E4B8BB;
+        }
+
+        .dark-mode {
+            background-color: #E4B8BB;
+            color: #F8F7F2;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            margin-top: 15px;
+            width: 100%;
+            padding: 1px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+        }
+
+        .navbar .left-links {
+            margin-left: 0px;
+            display: flex;
+        }
+
+        .navbar .left-links a {
+            margin-right: -2px; 
+        }
+
+        .navbar a {
+            color: inherit;
+            text-decoration: none;
+            padding: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #e4b8bb1e; 
+        }
+
+        .pink-mode .navbar {
+            color: #F8F7F2;
+        }
+
+        .beige-mode .navbar {
+            color: #E4B8BB;
+        }
+
+
+        /* MODE BTN */
+
+        .mode-btn-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .mode-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            margin-right: 12px;
+            position: relative;
+            background-color: transparent;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .outer-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .inner-circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .pink-mode .outer-circle {
+            background-color: #E4B8BB;
+        }
+
+        .pink-mode .inner-circle {
+            background-color: #F8F7F2;
+        }
+
+        .beige-mode .outer-circle {
+            background-color: #F8F7F2;
+        }
+
+        .beige-mode .inner-circle {
+            background-color: #E4B8BB;
+        }
+
+        /* INTRO SECTION */
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro div {
+            margin-bottom: 20px;
+        }
+
+        /* ABOUT SECTION */
+
+        #about {
+            position: relative;
+        }
+
+        #about h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        /* ABOUT SECTION */
+
+        #about img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #about a {
+            text-decoration: none;
+            color: #E4B8BB;
+            transition: color 0.3s ease;
+        }
+
+        #about a:hover {
+            color: #ffffff96;
+        }
+
+        /* CARD */
+
+        .ribbon {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; 
+            height: auto;
+            }
+
+        
+        h2.c-disc {
+            color: #9d020a;
+            font-size: 30px;
+            font-weight: 300;
+            letter-spacing: -2px;
+            font-style: normal;
+            margin-bottom: 0.8rem;
+            outline: none;
+            text-align: center;
+            margin-top: 10px;
+            cursor: default;
+        }
+
+        .shop-link {
+            color: #8d0108de;
+            text-decoration: none;
+        }
+
+        .shop-link:hover {
+            color: #eaaaae27;
+            text-decoration: none;
+        }
+
+        .maincontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .thecard {
+            position: relative;
+            top: -25px;
+            width: 200px;
+            height: 250px;
+            background: none;
+            border-radius: 10px;
+            transform-style: preserve-3d;
+            transition: all 0.8s ease;
+            margin: 40px;
+        }
+
+        .thecard:hover {
+            transform: rotateY(180deg);
+        }
+
+        .thefront, .theback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .thefront {
+            background: #ce83834d;
+            color: #000;
+            border: 1px solid #080000;
+        }
+
+        .theback {
+            background: #fafafa;
+            color: #333;
+            transform: rotateY(180deg);
+            border: 1px solid #080000;
+        }
+
+        .thefront img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+.down::before {
+  animation: bounce 1s ease infinite;
+  bottom:#efcdcf;
+  color: #E4B8BB;
+  content: '╲╱';
+  font-size: 15px;
+  height: 20px;
+  left: 50%;
+  letter-spacing: -1px;
+  line-height: 4rem;
+  margin-left: -3rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 540px;
+  text-align: center;
+  width: 6rem;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%);
+  }
+}
+
+    </style>
+
+
+
+
+</head>
+<body class="light-mode">
+
+    <div class="navbar">
+        <div class="left-links">
+            <a href="login.html"><img src="account1.png" alt="Account" style="width: 35px; height: 35px; transition: opacity 0.3s;" onmouseover="this.style.opacity=0" onmouseout="this.style.opacity=1"></a>
+            <a href="shop.html"><img src="shop1.png" alt="Shop" style="width: 35px; height: 35px; transition: opacity 0.3s;" onmouseover="this.style.opacity=0" onmouseout="this.style.opacity=1"></a>            
+        </div>
+    </div>
+    
+
+    
+
+    <section id="feminineEra" class="container">
+        <h1 class="feminineEra">Feminine Era</h1>
+        <div class="down"></div>
+        <div class="mode-btn-container">
+            <button id="pinkModeBtn" class="mode-btn pink-mode">
+                <div class="outer-circle"></div>
+                <div class="inner-circle"></div>
+            </button>
+            <button id="beigeModeBtn" class="mode-btn beige-mode">
+                <div class="outer-circle"></div>
+                <div class="inner-circle"></div>
+            </button>
+        </div>
+    </section>
+    <section class="intro">
+        <div>
+            <h2>What is Feminine Era? to simply put it, we are a thrift store!</h2> <br>
+            <h3>We love sustainability, I mean-- who doesn't? *side eye*</h3> <br>
+            <h3>but aside from that, we have our eyes on items that are</h3>
+            <br> <br>
+            <h1>feminine & timeless.</h1>
+        </div>
+    </section>
+    <section id="shop" class="container">
+        <h1>Check our loved categories!</h1>
+        <div class="maincontainer">
+            <div class="thecard">
+                <div class="thefront">
+                    <img src="prada1.png" alt="Prada shoes">
+                </div>
+                <div class="theback">
+                    <img src="ribbon.png" alt="Ribbon" class="ribbon">
+                    <h2 class="c-disc">shoes?</h2>
+                    <p><a href="shop.html" class="shop-link">Shop here.</a></p>
+                </div>
+            </div>
+            <div class="thecard">
+                <div class="thefront">
+                    <img src="dior2.png" alt="Image 2">
+                </div>
+                <div class="theback">
+                    <img src="ribbon.png" alt="Ribbon" class="ribbon">
+                    <h2 class="c-disc">bags?</h2>
+                    <p><a href="shop.html" class="shop-link">Shop here.</a></p>
+                </div>
+            </div>
+            <div class="thecard">
+                <div class="thefront">
+                    <img src="vw1.png" alt="Image 2">
+                </div>
+                <div class="theback">
+                    <img src="ribbon.png" alt="Ribbon" class="ribbon">
+                    <h2 class="c-disc">accessories?</h2>
+                    <p><a href="shop.html" class="shop-link">Shop here.</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="container">
+        <img src="highf.gif" alt="Blurry Image">
+        <h1>Want to know more about us? <a href="about.html">Click here.</a></h1>
+    </section>
+    <section id="contact" class="container">
+        <h1>Contact Us</h1>
+        <p>Email: contact@feminineera.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+        <p>Address: 123 Thrift Street, Feminine City, FC 12345</p>
+    </section>
+    </body>
+    </html>
+    <script>
+        const pinkModeBtn = document.getElementById('pinkModeBtn');
+        const beigeModeBtn = document.getElementById('beigeModeBtn');
+        const body = document.body;
+
+        pinkModeBtn.addEventListener('click', () => {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        });
+
+        beigeModeBtn.addEventListener('click', () => {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feminine era | login</title>
+    <link rel="icon" href="swan.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-weight: 300;
+            font-style: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #F8F7F2;
+        }
+
+        h2 {
+            color: #8f8f8f;
+            font-size: 20px;
+            text-transform: none;
+            letter-spacing: -2px;
+            font-weight: 300;
+            font-style: normal;
+            text-align: center;
+            cursor: default;
+        }
+
+        .left-section p {
+            color: #ffffffe2;
+            font-size: 20px;
+            letter-spacing: -1px;
+            text-transform: none;
+            font-weight: 300;
+            font-style: normal;
+            text-align: center;
+            cursor: default;
+        }
+
+        .right-section p {
+            color: #8f8f8f;
+            font-size: 15px;
+            text-transform: none;
+            font-weight: 300;
+            font-style: normal;
+            text-align: center;
+            cursor: default;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-section {
+            flex: 1;
+            background-image: url('log.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffeeef68;
+        }
+        form {
+            width: 100%;
+            max-width: 300px;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: border-color 1.5s;
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border: 1.5px solid #927375;
+            outline: none;
+            transition: background-color 1.5s;
+        }
+        input[type="submit"] {
+            background-color: #E4B8BB;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #ffffff;
+        }
+        .signup-link a {
+            margin-top: 15px;
+            color: #E4B8BB;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            color: #e4b8bb44;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-section">
+            <p class="left-paragraph">Be part of an amazing era. <br> Join us in creating a beautiful world.</p>
+        </div>
+        <div class="right-section">
+            <h2>Login</h2>
+            <form action="main.html" method="get">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Sign In">
+            </form>
+            <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>
