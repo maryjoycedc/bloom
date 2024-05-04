@@ -198,19 +198,19 @@
     </header>
 
     <main id="product-list">
-        <!-- Product listings will be dynamically added here -->
+       
     </main>
 
     <div id="cart" class="hidden">
         <h2>Cart <span class="close-button" onclick="closeCart()">x</span></h2>
         <ul id="cart-items">
-            <!-- Cart items will be dynamically added here -->
+           
         </ul>
-        <hr> <!-- Add a line to separate cart items from total -->
+        <hr> 
         <br>
         <div id="total-container">
             <span>Total:</span>
-            <span id="cart-total">$0</span> <!-- This will be dynamically updated -->
+            <span id="cart-total">$0</span> 
         </div>
         <br>
         <button id="checkout-button">Checkout</button>
@@ -234,7 +234,7 @@
             { id: 8, name: 'Chanel - Camellia Heels', price: 34, image: 'product8.png' },
             { id: 9, name: 'Louis Vuitton - Pleaty Mini Shoulder Bag', price: 20, image: 'product9.png' },
             { id: 10, name: 'Fendi - Pink Baguette', price: 34, image: 'product10.png' },
-            // Add more products here if needed
+   
         ];
 
         // Display products
@@ -250,58 +250,56 @@
             productList.appendChild(productElement);
         });
 
-        // Add to cart function
+   
         function addToCart(productId) {
             const product = products.find(prod => prod.id === productId);
             const cartItem = document.createElement('li');
             cartItem.innerHTML = `${product.name} - $${product.price}`;
             cartItems.appendChild(cartItem);
-            updateCartTotal(); // Update total when adding a new item
+            updateCartTotal();
             updateCartVisibility();
         }
 
         function addToCart(productId) {
             const product = products.find(prod => prod.id === productId);
             
-            // Check if the product is already in the cart
             const existingCartItem = Array.from(cartItems.children).find(item => {
                 return item.textContent.includes(product.name);
             });
 
-            // If the product is not in the cart, add it
             if (!existingCartItem) {
                 const cartItem = document.createElement('li');
                 cartItem.innerHTML = `${product.name} - $${product.price}`;
                 cartItems.appendChild(cartItem);
-                updateCartTotal(); // Update total when adding a new item
+                updateCartTotal(); 
                 updateCartVisibility();
                 
-                // Disable the "Add to Cart" button
+         
                 const addButton = document.getElementById(`add-to-cart-button`);
                 addButton.disabled = true;
             }
         }
 
-        // Update cart total
+      
         function updateCartTotal() {
             let total = 0;
             cartItems.querySelectorAll('li').forEach(item => {
-                total += parseFloat(item.textContent.match(/\d+(?:\.\d+)?/)[0]); // Extract price from item text
+                total += parseFloat(item.textContent.match(/\d+(?:\.\d+)?/)[0]); 
             });
             document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
         }
 
-        // Toggle cart visibility
+       
         cartButton.addEventListener('click', () => {
             cart.classList.toggle('hidden');
         });
 
-        // Close cart
+       
         function closeCart() {
             cart.classList.add('hidden');
         }
 
-        // Update cart visibility
+   
         function updateCartVisibility() {
             if (cartItems.children.length > 0) {
                 cart.classList.remove('hidden');
@@ -310,7 +308,7 @@
             }
         }
 
-        // Checkout functionality
+        
         checkoutButton.addEventListener('click', () => {
             alert('Checkout complete!\nTotal: ' + document.getElementById('cart-total').textContent);
         });
